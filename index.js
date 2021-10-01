@@ -24,13 +24,13 @@
 
     for (let i = 0; i < questionedAnswered; i++) {
         var userAnswer = prompt(`Enter answers for questions 1 -- ${questionedAnswered} in ascending order from [a,b,c,d]`)
-        randomAnswer == userAnswer ? results.push("You got this question right") : results.push("You got this question wrong")
+        randomAnswer == userAnswer ? results.push(true) : results.push(false)
     }
     
 
 // We would assume the exam/test to be a test and also we would assume the test to be 20 questioned in total
 
-   const confirmQuestionAnswered =  alert(`Please note that you answered ${questionedAnswered} out of 20 questions`)
+//    const confirmQuestionAnswered =  alert(`Please note that you answered ${questionedAnswered} out of 20 questions`)
 
 // Okay... please note that we technically do not have the test result from the user so am thinking i should a default one or.... or... or which ever i do you will find out below
 
@@ -39,11 +39,11 @@
     console.table(results);
 
 // Now we display the final results to the user
- const final = results.filter(check => {
-     
-     check == "You got this question right" ? alert("You got this question right") : alert("You got this question wrong")
- })
+ const final = results.filter(Boolean).length
 
- alert("check console for more detail on test.." + "\n" + " crtl shit i" + "Thank You")
+alert(`you got ${final} /${questionedAnswered}`)
+
+
+//  alert("check console for more detail on test.." + "\n" + " crtl shit i" + "Thank You")
 
  // End of code...........😎😋😎
